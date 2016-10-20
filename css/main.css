@@ -185,30 +185,30 @@ header nav ul li a:hover{
 .mapa{
 	width: 100vw;
 	height: 100vh;
+	position: relative;
 }
 
 .con-mapa{
-	z-index: 100;
 	position: relative;
 }
 
 .perfilClick{	
 	position: absolute;
-	z-index: 100;
+	z-index: 1;
 	left: 5%;
 	top: 5%;
 }
 
 .perfilClick1{	
 	position: absolute;
-	z-index: 100;
+	z-index: 1;
 	left: 30%;
 	top: 2%;
 }
 
 .regalo{
 	position: absolute;
-	z-index: 100;
+	z-index: 1;
 	left: 70%;
 	top: 4.5%;
 	background: #fff;
@@ -233,7 +233,7 @@ header nav ul li a:hover{
 
 .set{
 	position: absolute;
-	z-index: 100;
+	z-index: 1;
 	left: 33%;
 	top: 87%;
 	background: rgb(101,94,132);
@@ -242,8 +242,8 @@ header nav ul li a:hover{
 	font-size: 1.3em;
 }
 .nav{
-	   	position: absolute;
-	z-index: 101;
+	position: absolute;
+	z-index: 2;
     width: 100%;
     display: block;
 
@@ -319,20 +319,20 @@ header nav ul li a:hover{
     	display: none;
     }
 
-	header nav{
+	.nav nav{
 		width: 70%;
 		height: 100%;
 		margin: 0;
-		position: fixed;
+		z-index: 3;
 	}
 
-	header nav ul li{
+	.nav nav ul li{
 		display: block;
 		float: none;
 		border-bottom: 1px solid rgba(255,255,255,.3);
 	}
 
-    header nav ul li a{
+    .nav nav ul li a{
 	    padding: 18px;
 	    font-size: 1.1em;
     }
@@ -356,23 +356,23 @@ header nav ul li a:hover{
 
 	.perfilClick{	
 		position: absolute;
-		z-index: 100;
+		z-index: 1;
 		left: 5%;
-		top: 5%;
+		top: 6%;
 	}
 
 	.perfilClick1{	
 		position: absolute;
-		z-index: 100;
+		z-index: 1;
 		left: 30%;
 		top: 2%;
 	}
 
 	.regalo{
 		position: absolute;
-		z-index: 100;
+		z-index: 1;
 		left: 70%;
-		top: 4.5%;
+		top: 6%;
 		background: #fff;
 		font-size: 2em;
 		padding: 18px;
@@ -395,7 +395,7 @@ header nav ul li a:hover{
 
    .set{
    		position: absolute;
-		z-index: 100;
+		z-index: 1;
 		left: 33%;
 		top: 87%;
 		background: rgb(101,94,132);
@@ -449,6 +449,22 @@ header nav ul li a:hover{
      #mostrar1{
          margin-left: 38%;
          font-weight: bold;
+    }
+
+   .direccion{
+   	     position: absolute;
+   	     z-index: 1;
+         margin-top: 460px;
+         margin-left: 5px;
+    }
+
+    #direccion{
+    	width: 300px;
+    	border-radius: 3px;
+    }
+
+    .ocultar{  
+        background-color: rgba(0, 0, 7, 0.4);
 
     }
 }

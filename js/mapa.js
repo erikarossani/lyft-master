@@ -39,8 +39,9 @@ var funcionExito = function(posicion) {
            }
        }
 
-   $("#mapa").val(direccion);
+   $("#direccion").val(direccion);
    });
+
 };
 
 var funcionError = function (error) {

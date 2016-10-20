@@ -13,6 +13,7 @@ var load = function(){
 	$(".fecha").text("Joined " + fecha);
 	$("#mostrar1").text(mostrarNombre);
 	$(".perfilClick").click(menu);
+	$(".bt-menu").click(ocultar);
 
 };
 
@@ -152,7 +153,12 @@ var comprobarDatos = function() {
  var menu = function(e) {
      e.preventDefault();		 
        $(".nav").show("slow");
-       $(".mapa").css({"opacity": ".5"});
+       $(".nav").addClass("ocultar");
+ };
+
+ var ocultar = function(e) {
+     e.preventDefault();		 
+       $(".nav").hide("slow");
  };
 
 var fechaJoin = function() {
