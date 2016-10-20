@@ -1,0 +1,51 @@
+body{
+	background-image: url("../img/fondo.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 30px;
+}
+
+a{
+	margin-top: 18%;
+	margin-left: 2%;
+	font-weight: bolder;
+    width: 30%;
+}
+
+#sing{
+    background: #cb60b3; 
+    color: #fff;
+    background: -moz-linear-gradient(left,  #cb60b3 0%, #ad1283 50%, #de47ac 100%); 
+    background: -webkit-linear-gradient(left,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); 
+    background: linear-gradient(to right,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#de47ac',GradientType=1 ); 
+}
+
+#log{
+	background: transparent;
+	color: #fff;
+}
+#logo{
+    width: 350px;
+    margin-left: 38%;
+}
+
+@media screen and (max-width: 480px){
+    #logo{
+        width: 80%;
+        margin-left: 11%;
+    }
+
+    a{
+    margin-top: 95%;
+    margin-left: 2%;
+    font-weight: bolder;
+    width: 40%;
+}
+
+}
+
+
+
