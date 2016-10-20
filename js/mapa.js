@@ -15,9 +15,8 @@ var funcionExito = function(posicion) {
         center:latlon,zoom:14,
         mapTypeId:google.maps.MapTypeId.ROADMAP,
         mapTypeControl:false,
-        navigationControlOptions:{
-            style: google.maps.NavigationControlStyle.SMALL
-        }
+        zoomControl:false,
+        streetViewControl:false,
     };
     
     var map = new google.maps.Map(document.getElementById('mapa'), myOptions);
@@ -27,6 +26,21 @@ var funcionExito = function(posicion) {
         map:map,
         title:"You are here!"
     });
+
+    var direccion = "";
+
+   var geocoder = new google.maps.Geocoder();
+   geocoder.geocode({"latLng": latlon}, function(results, status) {
+       if (status == google.maps.GeocoderStatus.OK) {
+           if (results[0]) {
+               direccion =  results[0].formatted_address ;
+           } else {
+               direccion = "No se puede mostrar la dirección";
+           }
+       }
+
+   $("#mapa").val(direccion);
+   });
 };
 
 var funcionError = function (error) {
