@@ -10,48 +10,17 @@ var load = function(){
 	$("#next1").click(validarCode);
 	$("#name, #last").keydown(validarCaracteres);
 	$("#next2").click(comprobarDatos);
-	$(".fecha").text("Joined " + fecha);
-	$("#mostrar1").text(mostrarNombre);
+	$("#mostrar").text(mostrarNombre + mostrarApellido);
 	$(".perfilClick").click(menu);
-	$(".bt-menu").click(ocultar);
-    $(".guardar").click(guardarDatos);
-	     if(home != null){
-		     cambioInformación();
-	     }
-
-	     $("#subir").click(function(e) {
-		     $("#foto").click();
-	     });
-
-	     $("#foto").change(function(){
-    	     guardarImg(this);
-	     });
-
-	if(fotoPerfil != null){
-		if(location.href.includes("menu.html")){
-			$(".perfil1").attr("src", fotoPerfil);
-		}
-		if(location.href.includes("perfil.html")){
-			$(".foto").attr("src", fotoPerfil);
-		}
-		if(location.href.includes("editar.html")){
-			$(".img").attr("src", fotoPerfil);
-		}
-	}
-
 
 };
 
 $(document).ready(load);
     var validarCod = localStorage.getItem("verificar");
 	var numeroPhone = localStorage.getItem("phone");
-    var mostrarNombre = localStorage.getItem("datoNom");
-    var mostrarApellido = localStorage.getItem("datoLast");
-    var fecha = localStorage.getItem("fechaIngreso");
-    var home = localStorage.getItem("house");
-    var musica = localStorage.getItem("music");
-    var usuario = localStorage.getItem("user");
-    var fotoPerfil= localStorage.getItem("imagen");
+	var mostrarNombre = localStorage.getItem("textoName");
+	var mostrarApellido = localStorage.getItem("textoLast");
+	var contador = 1;
 
 var validarDigitos = function(e){
 	var ascii = e.keyCode;
@@ -151,8 +120,8 @@ var validarDatos = function() {
 	var boleano = true;
 
 	if (datos > 1 && datos < 20 && mail > 5 && mail < 50 && expr.test(correo)) {
-         mostrarNombre=localStorage.setItem("datoNom", textoName);
-         mostrarApellido=localStorage.setItem("datoLast", textoLast);
+		localStorage.setItem("datoNom", textoName);
+		localStorage.setItem("datoLast", textoLast);
 	} else {
 		 boleano =false;
 	}
@@ -169,8 +138,6 @@ var validarDatos = function() {
 var comprobarDatos = function() {
     if(validarDatos()){
     	$("#next2").attr("href", "menu.html");
-    	fechaJoin();
-
 
     }else{
     	$("#next2").removeAttr("href");
@@ -180,66 +147,20 @@ var comprobarDatos = function() {
 };
 
 var menu = function(e) {
-     e.preventDefault();		 
-       $(".nav").show("slow");
-       $(".nav").addClass("ocultar");
+     /*e.preventDefault();
+     if (contador == 1) {
+     	$("nav").animate({
+            left :"0"
+     	});
+        contador =0;
+     }else{
+     	contador =1;
+     	if (contador == 1) {
+     	    $("nav").animate({
+               left :"0"
+     	});
+     }*/
 };
-
-var ocultar = function(e) {
-     e.preventDefault();		 
-       $(".nav").hide("slow");
-};
-
-var fechaJoin = function() {
-    var meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "December"];
-    var datos = new Date();
-    var mes = datos.getMonth();
-    var year= datos.getFullYear();
-    var fecha = meses[mes] + " " + year;
-    localStorage.setItem("fechaIngreso", fecha);
-};
-
-var guardarDatos= function(){
-	var home = $("#home").val();
-	var music = $("#music").val();
-	var user = $("#usuario").val();
-	localStorage.setItem("house", home);
-	localStorage.setItem("music", music);
-	localStorage.setItem("user", user);
-
-	$("#from").val("");
-
-	cambioInformación();
-}
-
-var cambioInformación= function(){
-	if(home.length > 0){
-		$("#from").text(home);
-	}
-	if(musica.length > 0){
-		$("#favorite-music").text(musica);
-	}
-    if(usuario.length > 0){
-		$("#going").text(usuario);
-	}
-}
-var guardarImg= function(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            $('#img').attr('src', e.target.result);
-            localStorage.setItem("imagen", e.target.result)
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-
-
-
-
-
-
 
 
 

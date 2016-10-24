@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Lyft</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="icomoon/style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <header class="nav">
-        <nav>
-            <div class="menu_bar">
-                <a class="bt-menu"><img src="img/perfil.png"></a>
-                <a href="perfil.html" class="view">View profile</a>
-                <h6 id="mostrar1" class="mostrarNombre"></h6>
-            </div>
-            <ul>
-                <li><a><span class="icon-home"></span>Home</a></li>
-                <li><a><span class="icon-regalo"></span>Free Rides</a></li>
-                <li><a><span class="icon-history"></span>Ride history</a></li>
-                <li><a><span class="icon-payment"></span>Payment</a></li>
-                <li><a><span class="icon-help"></span>Help</a></li>
-                <li><a><span class="icon-tuerca"></span>Settings</a></li>
-                <li><a><span class="icon-volante"></span>Sing up to drive</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="section con-mapa">
-            <span class="perfilClick"><a><img src="img/perfil.png" class="user"></a></span>
-            <span class="perfilClick1"><a><img src="img/Lyftpink.png" class="pink"></a></span>
-            <span class="perfilClick2"><a class="icon-regalo regalo"></a></span>
-            <div class="direccion"><input type="text" id="direccion"/></div>
-            <div class="mapa" id="mapa"></div>
-            <a class="btn btn-default set">Set pickup</a> 
-    </div>
+     <head>
+	     <meta charset="UTF-8">
+	     <title>Lyft</title>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+         <link href="css/bootstrap.min.css" rel="stylesheet">
+         <link href="css/main.css" rel="stylesheet" type="text/css">
+         <link href="icomoon/style.css" rel="stylesheet" type="text/css">
+     </head>
+     <body>
+         <header class="nav">
+             <nav>
+                 <div class="menu_bar">
+                     <a class="bt-menu"><img src="img/perfil.png" class="perfil1"></a>
+                     <a href="perfil.html" class="view">View profile</a>
+                     <h6 id="mostrar1" class="mostrarNombre"></h6>
+                 </div>
+                 <ul>
+                     <li><a><span class="icon-home"></span>Home</a></li>
+                     <li><a><span class="icon-regalo"></span>Free Rides</a></li>
+                     <li><a><span class="icon-history"></span>Ride history</a></li>
+                     <li><a><span class="icon-payment"></span>Payment</a></li>
+                     <li><a><span class="icon-help"></span>Help</a></li>
+                     <li><a><span class="icon-tuerca"></span>Settings</a></li>
+                     <li><a><span class="icon-volante"></span>Sing up to drive</a></li>
+                 </ul>
+             </nav>
+         </header>
+         <div class="section con-mapa">
+                 <div class="circulo perfilClick">
+                     <a class="glyphicon glyphicon-user icons"></a>
+                 </div>
+                 <img src="img/lyftpink.png" class="logo2">
+                 <div class="circulo perfilclick1">
+                     <a class="glyphicon glyphicon-gift icons"></a>
+                 </div>
+                 <div class="group-btns">
+                     <div class="rect direccion">
+                         <input type="text" id="direccion" class="form-control borde">
+                     </div>
+                     <div class="rect pick-up" id="pick">Set Pickup</div>
+                 </div>
+                 <div class="mapa" id="mapa"></div>
+        </div>
 
     <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script> 
